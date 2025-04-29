@@ -80,7 +80,7 @@
 				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>eazybytes/${project.artifactId}:s11</image>
+						<image>giangphaws/${project.artifactId}:s11</image>
 					</to>
 				</configuration>
 			</plugin>
