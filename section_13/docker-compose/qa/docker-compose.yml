@@ -45,7 +45,7 @@ services:
       timeout: 5s
       retries: 5
     networks: &loki-dns
-      eazybank:
+      giangphaws:
         aliases:
           - loki
 
@@ -244,7 +244,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "eazybytes/configserver:s13"
+    image: "giangphaws/configserver:s13"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -261,7 +261,7 @@ services:
       OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
-    image: "eazybytes/eurekaserver:s13"
+    image: "giangphaws/eurekaserver:s13"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -282,7 +282,7 @@ services:
       OTEL_SERVICE_NAME: "eurekaserver"
 
   accounts:
-    image: "eazybytes/accounts:s13"
+    image: "giangphaws/accounts:s13"
     container_name: accounts-ms
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
@@ -306,7 +306,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "eazybytes/loans:s13"
+    image: "giangphaws/loans:s13"
     container_name: loans-ms
     depends_on:
       configserver:
@@ -327,7 +327,7 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "eazybytes/cards:s13"
+    image: "giangphaws/cards:s13"
     container_name: cards-ms
     depends_on:
       configserver:
@@ -348,7 +348,7 @@ services:
       service: microservice-eureka-config
 
   message:
-    image: "eazybytes/message:s13"
+    image: "giangphaws/message:s13"
     container_name: message-ms
     depends_on:
       rabbit:
@@ -360,7 +360,7 @@ services:
       service: network-deploy-service
 
   gatewayserver:
-    image: "eazybytes/gatewayserver:s13"
+    image: "giangphaws/gatewayserver:s13"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -380,5 +380,5 @@ services:
       service: microservice-eureka-config
 
 networks:
-  eazybank:
+  giangphaws:
     driver: "bridge"
