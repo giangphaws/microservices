@@ -128,7 +128,7 @@
 				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>eazybytes/${project.artifactId}:s14</image>
+						<image>giangphaws/${project.artifactId}:s14</image>
 					</to>
 				</configuration>
 			</plugin>
